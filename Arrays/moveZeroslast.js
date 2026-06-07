@@ -1,28 +1,55 @@
-function moveZero(array)
+// function moveZero(array)
 
-{
+// {
 
-    let index=0;
+//     let index=0;
     
 
-    for(let i=0;i<=array.length;i++)
-    {
+//     for(let i=0;i<=array.length;i++)
+//     {
 
-        if(array[i]!==0)
+//         if(array[i]!==0)
 
-            {
+//             {
 
-            let temp=array[i]
+//             let temp=array[i]
 
-            array[i]=array[index]
-            array[index]=temp
+//             array[i]=array[index]
+//             array[index]=temp
 
-            index++
+//             index++
 
-            }
+//             }
 
-    }
-  return array
+//     }
+//   return array
+// }
+
+// console.log(moveZero([1,2,4,0,5,0]));
+
+
+function moveZero(array)
+{
+
+let num=0;
+let temp;
+let newArray=[]
+for(let i=0;i<array.length;i++)
+{
+
+if(array[i]!==0)
+{
+
+    temp=array[i]
+    array[i]=array[num]
+    array[num]=temp
+   num++
+   
 }
 
-console.log(moveZero([1,2,4,0,5,0]));
+}
+return array
+
+
+}
+console.log(moveZero([2,0,8,10,0]));

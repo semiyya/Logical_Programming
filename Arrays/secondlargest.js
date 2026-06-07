@@ -1,7 +1,7 @@
 // function secondLargest(array)
 // {
 
-const { log } = require("console")
+
 
      
 //     for(let i=0;i<array.length;i++)
@@ -59,25 +59,57 @@ const { log } = require("console")
 // // Example
 // console.log(secondLargest([10, 5, 20, 8, 20])); // Output: 10
 
-function secondlargest(array)
+// function secondlargest(array)
+// {
+//     let first =-Infinity ;
+//     let second=-Infinity;
+//     for(let num of array)
+//     {
+//         if(num>first)
+//         {
+            
+            
+//             first=num;    
+//             second=first;
+//         }
+//         else if(num>second&&num!==first)
+//         {
+//             second=num;
+
+//         }
+//     }
+//     return second===-Infinity ? null  : second
+// }
+// console.log(secondlargest([10, 5, 20, 8, 20]));
+
+
+function secondLargest(array)
 {
-    let first =-Infinity ;
-    let second=-Infinity;
+
+    let firstLargest= -Infinity 
+    let secondLargest= -Infinity
+    
     for(let num of array)
     {
-        if(num>first)
-        {
-            
-            
-            first=num;    
-            second=first;
-        }
-        else if(num>second&&num!==first)
-        {
-            second=num;
 
+        if(num>firstLargest)
+        {
+            secondLargest=firstLargest
+            firstLargest=num
+         
         }
+
+      else if(num>secondLargest&&num!==firstLargest)
+      {
+
+          secondLargest=num
+
+      }
+
     }
-    return second===-Infinity ? null  : second
+   
+      return secondLargest===-Infinity ? null  : secondLargest
+
 }
-console.log(secondlargest([10, 5, 20, 8, 20]));
+
+console.log(secondLargest([1,4,20,10,8]));
